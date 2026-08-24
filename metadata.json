@@ -1,0 +1,6 @@
+{
+  "name": "Sisters Blessed Treats",
+  "description": "Multi-page artisan bakery website for Sisters Blessed Treats in PHI, Lusaka, Zambia.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
