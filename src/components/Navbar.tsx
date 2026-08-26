@@ -65,15 +65,24 @@ export const Navbar: React.FC = () => {
           <Link
             to="/"
             id="nav-brand-logo"
-            className="flex flex-col group focus:outline-hidden py-1"
+            className="flex items-center gap-2.5 sm:gap-3 group focus:outline-hidden py-1"
             aria-label="Sisters Blessed Treats - Home"
           >
-            <span className="font-serif text-lg sm:text-xl font-medium tracking-tight text-[#2D241E] group-hover:text-[#B4975A] transition-colors whitespace-nowrap">
-              Sisters Blessed Treats
-            </span>
-            <span className="text-[9px] uppercase tracking-[0.22em] text-[#B4975A] font-sans font-medium whitespace-nowrap">
-              PHI • Lusaka, Zambia
-            </span>
+            <img
+              src="/logo.svg"
+              alt="Sisters Blessed Treats Emblem"
+              className="w-8 h-8 sm:w-10 sm:h-10 object-contain shrink-0 group-hover:opacity-90 transition-opacity"
+              width="40"
+              height="40"
+            />
+            <div className="flex flex-col">
+              <span className="font-serif text-base sm:text-xl font-medium tracking-tight text-[#2D241E] group-hover:text-[#B4975A] transition-colors whitespace-nowrap">
+                Sisters Blessed Treats
+              </span>
+              <span className="text-[8.5px] sm:text-[9px] uppercase tracking-[0.2em] sm:tracking-[0.22em] text-[#B4975A] font-sans font-medium whitespace-nowrap">
+                PHI • Lusaka, Zambia
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Navigation Links & Action */}
