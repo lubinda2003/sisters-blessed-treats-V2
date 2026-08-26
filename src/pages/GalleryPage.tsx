@@ -155,6 +155,24 @@ export const GalleryPage: React.FC = () => {
     ? portfolioItems
     : portfolioItems.filter((item) => item.category === selectedCategory);
 
+  const currentIndex = selectedItem ? filteredItems.findIndex((i) => i.id === selectedItem.id) : -1;
+
+  const handlePrev = () => {
+    if (currentIndex > 0) {
+      setSelectedItem(filteredItems[currentIndex - 1]);
+    } else if (filteredItems.length > 0) {
+      setSelectedItem(filteredItems[filteredItems.length - 1]);
+    }
+  };
+
+  const handleNext = () => {
+    if (currentIndex >= 0 && currentIndex < filteredItems.length - 1) {
+      setSelectedItem(filteredItems[currentIndex + 1]);
+    } else if (filteredItems.length > 0) {
+      setSelectedItem(filteredItems[0]);
+    }
+  };
+
   return (
     <div className="py-8 sm:py-12 bg-[#FDFBF7]">
       <SEO
@@ -291,6 +309,10 @@ export const GalleryPage: React.FC = () => {
         isOpen={!!selectedItem}
         onClose={() => setSelectedItem(null)}
         item={selectedItem}
+        onPrev={handlePrev}
+        onNext={handleNext}
+        currentIndex={currentIndex}
+        totalCount={filteredItems.length}
       />
     </div>
   );

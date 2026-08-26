@@ -4,9 +4,15 @@ interface SeoProps {
   title: string;
   description: string;
   canonicalPath?: string;
+  image?: string;
 }
 
-export const SEO: React.FC<SeoProps> = ({ title, description, canonicalPath = '/' }) => {
+export const SEO: React.FC<SeoProps> = ({
+  title,
+  description,
+  canonicalPath = '/',
+  image = 'https://sistersblessedtreats.com/images/hero_signature_cake.jpg',
+}) => {
   useEffect(() => {
     // 1. Update Document Title
     const fullTitle = `${title} | Sisters Blessed Treats`;
@@ -21,33 +27,50 @@ export const SEO: React.FC<SeoProps> = ({ title, description, canonicalPath = '/
     }
     metaDescription.setAttribute('content', description);
 
-    // 3. Update Canonical Link
+    // 3. Update Canonical Link & og:url
+    const siteUrl = 'https://sistersblessedtreats.com';
+    const fullCanonicalUrl = `${siteUrl}${canonicalPath === '/' ? '' : canonicalPath}`;
+
     let linkCanonical = document.querySelector('link[rel="canonical"]');
     if (!linkCanonical) {
       linkCanonical = document.createElement('link');
       linkCanonical.setAttribute('rel', 'canonical');
       document.head.appendChild(linkCanonical);
     }
-    const origin = typeof window !== 'undefined' ? window.location.origin : 'https://sistersblessedtreats.com';
-    linkCanonical.setAttribute('href', `${origin}${canonicalPath}`);
+    linkCanonical.setAttribute('href', fullCanonicalUrl);
 
     // 4. Update Open Graph Tags
-    let ogTitle = document.querySelector('meta[property="og:title"]');
-    if (!ogTitle) {
-      ogTitle = document.createElement('meta');
-      ogTitle.setAttribute('property', 'og:title');
-      document.head.appendChild(ogTitle);
-    }
-    ogTitle.setAttribute('content', fullTitle);
+    const setMetaProperty = (property: string, content: string) => {
+      let meta = document.querySelector(`meta[property="${property}"]`);
+      if (!meta) {
+        meta = document.createElement('meta');
+        meta.setAttribute('property', property);
+        document.head.appendChild(meta);
+      }
+      meta.setAttribute('content', content);
+    };
 
-    let ogDescription = document.querySelector('meta[property="og:description"]');
-    if (!ogDescription) {
-      ogDescription = document.createElement('meta');
-      ogDescription.setAttribute('property', 'og:description');
-      document.head.appendChild(ogDescription);
-    }
-    ogDescription.setAttribute('content', description);
-  }, [title, description, canonicalPath]);
+    setMetaProperty('og:title', fullTitle);
+    setMetaProperty('og:description', description);
+    setMetaProperty('og:url', fullCanonicalUrl);
+    setMetaProperty('og:image', image);
+
+    // 5. Update Twitter Card Tags
+    const setMetaName = (name: string, content: string) => {
+      let meta = document.querySelector(`meta[name="${name}"]`);
+      if (!meta) {
+        meta = document.createElement('meta');
+        meta.setAttribute('name', name);
+        document.head.appendChild(meta);
+      }
+      meta.setAttribute('content', content);
+    };
+
+    setMetaName('twitter:title', fullTitle);
+    setMetaName('twitter:description', description);
+    setMetaName('twitter:image', image);
+  }, [title, description, canonicalPath, image]);
 
   return null;
 };
+

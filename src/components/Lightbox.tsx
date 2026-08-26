@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { X, MessageCircle, Sparkles } from 'lucide-react';
+import React, { useEffect, useRef } from 'react';
+import { X, MessageCircle, ChevronLeft, ChevronRight } from 'lucide-react';
 import { getWhatsAppInquiryUrl } from '../data/business';
 
 interface LightboxProps {
@@ -12,13 +12,31 @@ interface LightboxProps {
     suggestedFile: string;
     description?: string;
   } | null;
+  onPrev?: () => void;
+  onNext?: () => void;
+  currentIndex?: number;
+  totalCount?: number;
 }
 
-export const Lightbox: React.FC<LightboxProps> = ({ isOpen, onClose, item }) => {
+export const Lightbox: React.FC<LightboxProps> = ({
+  isOpen,
+  onClose,
+  item,
+  onPrev,
+  onNext,
+  currentIndex,
+  totalCount,
+}) => {
+  const touchStartX = useRef<number | null>(null);
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
         onClose();
+      } else if (e.key === 'ArrowLeft' && onPrev) {
+        onPrev();
+      } else if (e.key === 'ArrowRight' && onNext) {
+        onNext();
       }
     };
 
@@ -31,32 +49,84 @@ export const Lightbox: React.FC<LightboxProps> = ({ isOpen, onClose, item }) => 
       document.body.style.overflow = '';
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [isOpen, onClose]);
+  }, [isOpen, onClose, onPrev, onNext]);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null) return;
+    const touchEndX = e.changedTouches[0].clientX;
+    const diff = touchStartX.current - touchEndX;
+
+    // Minimum swipe threshold 50px
+    if (Math.abs(diff) > 50) {
+      if (diff > 0 && onNext) {
+        onNext(); // Swiped left -> next
+      } else if (diff < 0 && onPrev) {
+        onPrev(); // Swiped right -> prev
+      }
+    }
+    touchStartX.current = null;
+  };
 
   if (!isOpen || !item) return null;
 
   return (
     <div
       id="lightbox-backdrop"
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-[#2D241E]/80 backdrop-blur-xs animate-in fade-in duration-200"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-[#2D241E]/85 backdrop-blur-xs animate-in fade-in duration-200"
       onClick={onClose}
       role="dialog"
       aria-modal="true"
       aria-labelledby="lightbox-title"
     >
       <div
-        className="relative max-w-3xl w-full bg-[#FDFBF7] border border-[#B4975A]/40 rounded-xs shadow-2xl overflow-hidden animate-in zoom-in-95 duration-200"
+        className="relative max-w-3xl w-full bg-[#FDFBF7] border border-[#B4975A]/40 rounded-[2px] shadow-2xl overflow-hidden animate-in zoom-in-95 duration-200"
         onClick={(e) => e.stopPropagation()}
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
       >
         {/* Close Button */}
         <button
           type="button"
           onClick={onClose}
           aria-label="Close Lightbox"
-          className="absolute top-3 right-3 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-[#2D241E]/80 text-[#FDFBF7] hover:bg-[#2D241E] hover:text-[#B4975A] transition-colors cursor-pointer"
+          className="absolute top-3 right-3 z-20 w-9 h-9 flex items-center justify-center rounded-full bg-[#2D241E]/80 text-[#FDFBF7] hover:bg-[#2D241E] hover:text-[#B4975A] transition-colors cursor-pointer"
         >
           <X className="w-5 h-5" />
         </button>
+
+        {/* Previous Button */}
+        {onPrev && totalCount && totalCount > 1 && (
+          <button
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              onPrev();
+            }}
+            aria-label="Previous cake image"
+            className="absolute left-3 top-1/2 -translate-y-1/2 z-20 w-9 h-9 flex items-center justify-center rounded-full bg-[#2D241E]/75 text-[#FDFBF7] hover:bg-[#2D241E] hover:text-[#B4975A] transition-colors cursor-pointer shadow-md"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+        )}
+
+        {/* Next Button */}
+        {onNext && totalCount && totalCount > 1 && (
+          <button
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              onNext();
+            }}
+            aria-label="Next cake image"
+            className="absolute right-3 top-1/2 -translate-y-1/2 md:right-[42%] z-20 w-9 h-9 flex items-center justify-center rounded-full bg-[#2D241E]/75 text-[#FDFBF7] hover:bg-[#2D241E] hover:text-[#B4975A] transition-colors cursor-pointer shadow-md"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
+        )}
 
         <div className="flex flex-col md:flex-row">
           {/* Visual Showcase Container */}
@@ -71,17 +141,22 @@ export const Lightbox: React.FC<LightboxProps> = ({ isOpen, onClose, item }) => 
                 e.currentTarget.style.display = 'none';
               }}
             />
-            <div className="absolute bottom-3 left-3 bg-[#2D241E]/80 backdrop-blur-xs px-2.5 py-1 border border-[#B4975A]/30">
+            <div className="absolute bottom-3 left-3 bg-[#2D241E]/80 backdrop-blur-xs px-2.5 py-1 border border-[#B4975A]/30 flex items-center gap-2">
               <span className="text-[10px] uppercase tracking-[0.2em] text-[#B4975A] font-semibold">
                 {item.category} • {item.tag || 'Artisan Design'}
               </span>
+              {typeof currentIndex === 'number' && typeof totalCount === 'number' && (
+                <span className="text-[9px] text-[#FDFBF7]/70 font-sans pl-1 border-l border-white/20">
+                  {currentIndex + 1} / {totalCount}
+                </span>
+              )}
             </div>
           </div>
 
           {/* Details & WhatsApp Action */}
           <div className="md:w-2/5 p-6 sm:p-7 flex flex-col justify-between bg-[#FDFBF7]">
             <div>
-              <div className="inline-block px-2.5 py-0.5 bg-[#F5F0E6] text-[#B4975A] border border-[#B4975A]/30 text-[10px] uppercase tracking-widest font-medium rounded-xs mb-2">
+              <div className="inline-block px-2.5 py-0.5 bg-[#F5F0E6] text-[#B4975A] border border-[#B4975A]/30 text-[10px] uppercase tracking-widest font-medium rounded-[2px] mb-2">
                 {item.category}
               </div>
               <h3 id="lightbox-title" className="font-serif text-xl sm:text-2xl font-normal text-[#2D241E] mb-2">
@@ -102,9 +177,9 @@ export const Lightbox: React.FC<LightboxProps> = ({ isOpen, onClose, item }) => 
                 href={getWhatsAppInquiryUrl({ category: item.title })}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full flex items-center justify-center gap-2 py-3 px-4 bg-[#2D241E] text-[#FDFBF7] text-[11px] uppercase tracking-[0.15em] font-medium hover:bg-[#B4975A] transition-colors shadow-xs"
+                className="w-full flex items-center justify-center gap-2 py-3 px-4 bg-[#2D241E] text-[#FDFBF7] text-[10px] sm:text-[11px] uppercase tracking-[0.16em] font-medium rounded-[2px] hover:bg-[#B4975A] transition-colors shadow-xs cursor-pointer"
               >
-                <MessageCircle className="w-4 h-4 text-[#B4975A]" />
+                <MessageCircle className="w-3.5 h-3.5 text-[#B4975A]" />
                 <span>Inquire on WhatsApp</span>
               </a>
             </div>
