@@ -1,7 +1,7 @@
 // Centralized image mapping for Sisters Blessed Treats assets
 // All images are imported as standard ESM modules so Vite hashes and bundles them into dist/assets/
 
-import heroCakeBg from './hero_cake_bg_1787595355585.jpg';
+import heroCakeBg from './hero_cake_bg_1787739909601.jpg';
 import heroSignatureCake from './hero_signature_cake_1787593172850.jpg';
 import heroCakeUser from './hero_cake_user_1787596833049.jpg';
 
