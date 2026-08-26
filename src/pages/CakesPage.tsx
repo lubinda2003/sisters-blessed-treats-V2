@@ -47,7 +47,7 @@ export const CakesPage: React.FC = () => {
                   label={celebrationCake.title}
                   subLabel="Birthdays, Graduations & Milestones"
                   aspectRatio="landscape"
-                  suggestedFile="/images/cakes/celebration-cake.jpg"
+                  suggestedFile={celebrationCake.suggestedImage}
                   priorityBadge="4″ – 8″ Tiers"
                 />
               </div>
@@ -120,7 +120,7 @@ export const CakesPage: React.FC = () => {
                   label={weddingCake.title}
                   subLabel="Matrimonial Architecture"
                   aspectRatio="landscape"
-                  suggestedFile="/images/cakes/wedding-cake.jpg"
+                  suggestedFile={weddingCake.suggestedImage}
                   priorityBadge="Multi-Tier"
                 />
               </div>
@@ -193,7 +193,7 @@ export const CakesPage: React.FC = () => {
                   label={customCake.title}
                   subLabel="Bespoke Themes & Formats"
                   aspectRatio="landscape"
-                  suggestedFile="/images/cakes/custom-cake.jpg"
+                  suggestedFile={customCake.suggestedImage}
                   priorityBadge="Bespoke"
                 />
               </div>

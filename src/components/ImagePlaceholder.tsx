@@ -27,8 +27,8 @@ export const ImagePlaceholder: React.FC<ImagePlaceholderProps> = ({
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageError, setImageError] = useState(false);
 
-  // If a src is provided and hasn't errored
-  const activeSrc = src || (suggestedFile ? suggestedFile.replace(/^\/public/, '') : undefined);
+  // If a src or suggestedFile is provided and hasn't errored
+  const activeSrc = src || suggestedFile || undefined;
 
   const aspectClasses = {
     square: 'aspect-square',

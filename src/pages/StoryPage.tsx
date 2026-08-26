@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Sparkles, MessageCircle, ArrowRight, Check } from 'lucide-react';
 import { BUSINESS, getWhatsAppInquiryUrl } from '../data/business';
+import { IMAGES } from '../assets/images';
 import { ImagePlaceholder } from '../components/ImagePlaceholder';
 import { SEO } from '../components/SEO';
 
@@ -39,7 +40,7 @@ export const StoryPage: React.FC = () => {
                 label="Artisan Bakery Kitchen"
                 subLabel="Religious Sisters in Lusaka"
                 aspectRatio="portrait"
-                suggestedFile="/images/story/sisters-baking-craft.jpg"
+                suggestedFile={IMAGES.storyBakingCraft}
                 priorityBadge="Convent Kitchen"
               />
               <div className="pt-3 flex items-center justify-between text-[11px] text-[#2D241E]/70 font-sans border-t border-[#2D241E]/10 mt-2">

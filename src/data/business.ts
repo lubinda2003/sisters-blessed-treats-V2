@@ -1,4 +1,5 @@
 import { BusinessInfo, CakeCategory, CakeFlavour, CakeSize, GalleryItem, OrderDetail } from '../types';
+import { IMAGES } from '../assets/images';
 
 export const BUSINESS: BusinessInfo = {
   name: 'Sisters Blessed Treats',
@@ -21,6 +22,7 @@ export const FLAVOURS: CakeFlavour[] = [
     notes: 'Aromatic, delicate crumb infused with pure vanilla essence and velvety buttercream.',
     accentColor: '#D9B982',
     highlight: 'Classic & Pure',
+    suggestedFile: IMAGES.flavourVanilla,
   },
   {
     id: 'strawberry',
@@ -28,6 +30,7 @@ export const FLAVOURS: CakeFlavour[] = [
     notes: 'Bright berry notes, balanced natural sweetness, and a soft, fragrant texture.',
     accentColor: '#C47474',
     highlight: 'Fresh Berry Essence',
+    suggestedFile: IMAGES.flavourStrawberry,
   },
   {
     id: 'chocolate',
@@ -35,6 +38,7 @@ export const FLAVOURS: CakeFlavour[] = [
     notes: 'Rich cocoa richness with deep, comforting moisture and luscious chocolate finish.',
     accentColor: '#5C3A21',
     highlight: 'Decadent & Moist',
+    suggestedFile: IMAGES.flavourChocolate,
   },
   {
     id: 'red-velvet',
@@ -42,6 +46,7 @@ export const FLAVOURS: CakeFlavour[] = [
     notes: 'Classic crimson crumb with a subtle hint of cocoa, paired with smooth frosting.',
     accentColor: '#8C2B32',
     highlight: 'Signature Crimson',
+    suggestedFile: IMAGES.flavourRedvelvet,
   },
 ];
 
@@ -80,7 +85,7 @@ export const CATEGORIES: CakeCategory[] = [
     priceRange: 'Approx. K200 – K5,000',
     description: 'Custom baked according to your size, signature flavour, and decorative theme. Made fresh to order with care and patience.',
     leadTime: '2+ days notice',
-    suggestedImage: '/images/cakes/celebration-cake.jpg',
+    suggestedImage: IMAGES.celebrationCake,
     features: [
       'Available in 4″, 6″, and 8″ tiers',
       '4 signature flavour choices',
@@ -94,7 +99,7 @@ export const CATEGORIES: CakeCategory[] = [
     priceRange: 'From K3,500 upwards',
     description: 'Bespoke multi-tiered architectural creations baked with spiritual devotion and refined elegance for your sacred union.',
     leadTime: 'Advance booking recommended',
-    suggestedImage: '/images/cakes/wedding-cake.jpg',
+    suggestedImage: IMAGES.weddingCake,
     features: [
       'Multi-tiered architectural designs',
       'Multi-flavour tier combinations',
@@ -108,7 +113,7 @@ export const CATEGORIES: CakeCategory[] = [
     priceRange: 'Custom quote on request',
     description: 'Bring your specific concept, dietary request, or theme to life. We handcraft unique confections tailored to your vision.',
     leadTime: '3+ days notice',
-    suggestedImage: '/images/cakes/custom-cake.jpg',
+    suggestedImage: IMAGES.customCake,
     features: [
       'Unique decorative themes',
       'Custom sizing & tiered layouts',
@@ -124,7 +129,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     category: 'Celebration',
     tag: 'Single Tier',
     aspect: 'portrait',
-    suggestedFile: '/images/cakes/gallery-celebration-1.jpg',
+    suggestedFile: IMAGES.galleryCelebration1,
   },
   {
     id: 'g-2',
@@ -132,7 +137,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     category: 'Wedding',
     tag: '3-Tier Arch',
     aspect: 'portrait',
-    suggestedFile: '/images/cakes/gallery-wedding-1.jpg',
+    suggestedFile: IMAGES.galleryWedding1,
   },
   {
     id: 'g-3',
@@ -140,7 +145,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     category: 'Signature Flavour',
     tag: 'Crumb Detail',
     aspect: 'square',
-    suggestedFile: '/images/cakes/gallery-redvelvet-1.jpg',
+    suggestedFile: IMAGES.galleryRedvelvet1,
   },
   {
     id: 'g-4',
@@ -148,7 +153,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     category: 'Custom Artistry',
     tag: 'Piping Detail',
     aspect: 'square',
-    suggestedFile: '/images/cakes/gallery-floral-1.jpg',
+    suggestedFile: IMAGES.galleryFloral1,
   },
   {
     id: 'g-5',
@@ -156,7 +161,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     category: 'Signature Flavour',
     tag: 'Pure Cocoa',
     aspect: 'landscape',
-    suggestedFile: '/images/cakes/gallery-chocolate-1.jpg',
+    suggestedFile: IMAGES.galleryChocolate1,
   },
   {
     id: 'g-6',
@@ -164,7 +169,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     category: 'Celebration',
     tag: 'Pastel Finish',
     aspect: 'portrait',
-    suggestedFile: '/images/cakes/gallery-strawberry-1.jpg',
+    suggestedFile: IMAGES.galleryStrawberry1,
   },
   {
     id: 'g-7',
@@ -172,7 +177,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     category: 'Wedding',
     tag: '2-Tier Minimal',
     aspect: 'square',
-    suggestedFile: '/images/cakes/gallery-minimal-tier.jpg',
+    suggestedFile: IMAGES.galleryMinimalTier,
   },
   {
     id: 'g-8',
@@ -180,7 +185,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     category: 'Custom Artistry',
     tag: 'Milestone Theme',
     aspect: 'landscape',
-    suggestedFile: '/images/cakes/gallery-custom-milestone.jpg',
+    suggestedFile: IMAGES.galleryCustomMilestone,
   },
   {
     id: 'g-9',
@@ -188,7 +193,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     category: 'Signature Flavour',
     tag: 'Golden Sponge',
     aspect: 'square',
-    suggestedFile: '/images/cakes/gallery-vanilla-crumb.jpg',
+    suggestedFile: IMAGES.galleryVanillaCrumb,
   },
   {
     id: 'g-10',
@@ -196,7 +201,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     category: 'Celebration',
     tag: 'Bento Style',
     aspect: 'portrait',
-    suggestedFile: '/images/cakes/gallery-bento-vintage.jpg',
+    suggestedFile: IMAGES.galleryBentoVintage,
   },
   {
     id: 'g-11',
@@ -204,7 +209,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     category: 'Wedding',
     tag: '4-Tier Matrimony',
     aspect: 'portrait',
-    suggestedFile: '/images/cakes/gallery-grand-cascade.jpg',
+    suggestedFile: IMAGES.galleryGrandCascade,
   },
   {
     id: 'g-12',
@@ -212,7 +217,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     category: 'Celebration',
     tag: 'Rustic Botanical',
     aspect: 'square',
-    suggestedFile: '/images/cakes/gallery-rustic-berry.jpg',
+    suggestedFile: IMAGES.galleryRusticBerry,
   },
   {
     id: 'g-13',
@@ -220,7 +225,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     category: 'Custom Artistry',
     tag: '24k Gold Marble',
     aspect: 'landscape',
-    suggestedFile: '/images/cakes/gallery-milestone-gold.jpg',
+    suggestedFile: IMAGES.galleryMilestoneGold,
   },
   {
     id: 'g-14',
@@ -228,7 +233,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     category: 'Custom Artistry',
     tag: 'Palette Knife',
     aspect: 'square',
-    suggestedFile: '/images/cakes/gallery-palette-floral.jpg',
+    suggestedFile: IMAGES.galleryPaletteFloral,
   },
 ];
 

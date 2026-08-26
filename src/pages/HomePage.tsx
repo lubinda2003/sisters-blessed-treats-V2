@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { MessageCircle, ArrowRight } from 'lucide-react';
 import { BUSINESS, CATEGORIES, FLAVOURS, getWhatsAppInquiryUrl } from '../data/business';
+import { IMAGES } from '../assets/images';
 import { ImagePlaceholder } from '../components/ImagePlaceholder';
 import { SEO } from '../components/SEO';
 
@@ -23,7 +24,7 @@ export const HomePage: React.FC = () => {
         {/* Background Image: Centerpiece Cake Positioned to the Right */}
         <div className="absolute inset-0 z-0">
           <img
-            src="/images/cakes/hero-cake-bg.jpg"
+            src={IMAGES.heroCakeBg}
             alt="Artisan 3-Tier Ivory & Gold Celebration Cake"
             referrerPolicy="no-referrer"
             className="w-full h-full object-cover object-[82%_center] sm:object-right"
@@ -198,7 +199,7 @@ export const HomePage: React.FC = () => {
                       label={flavour.name}
                       subLabel={flavour.highlight}
                       aspectRatio="landscape"
-                      suggestedFile={`/images/flavours/flavour-${flavour.id}.jpg`}
+                      suggestedFile={flavour.suggestedFile}
                     />
                     <div
                       className="absolute top-2 right-2 w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full border border-white/90 shadow-xs"
@@ -268,7 +269,7 @@ export const HomePage: React.FC = () => {
                 label="Celebration Tier"
                 subLabel="Single Tier Design"
                 aspectRatio="landscape"
-                suggestedFile="/images/cakes/gallery-celebration-1.jpg"
+                suggestedFile={IMAGES.galleryCelebration1}
               />
               <p className="text-[11px] sm:text-xs font-serif text-[#2D241E] truncate">Single Tier Occasion</p>
             </div>
@@ -278,7 +279,7 @@ export const HomePage: React.FC = () => {
                 label="Wedding Cake"
                 subLabel="Multi-Tier Architecture"
                 aspectRatio="landscape"
-                suggestedFile="/images/cakes/gallery-wedding-1.jpg"
+                suggestedFile={IMAGES.galleryWedding1}
               />
               <p className="text-[11px] sm:text-xs font-serif text-[#2D241E] truncate">Multi-Tier Wedding</p>
             </div>
@@ -288,7 +289,7 @@ export const HomePage: React.FC = () => {
                 label="Red Velvet Crumb"
                 subLabel="Artisan Sponge Detail"
                 aspectRatio="landscape"
-                suggestedFile="/images/cakes/gallery-redvelvet-1.jpg"
+                suggestedFile={IMAGES.galleryRedvelvet1}
               />
               <p className="text-[11px] sm:text-xs font-serif text-[#2D241E] truncate">Signature Red Velvet</p>
             </div>

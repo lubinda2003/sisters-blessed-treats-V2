@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Sparkles, MessageCircle, ZoomIn } from 'lucide-react';
 import { GALLERY_ITEMS, getWhatsAppInquiryUrl } from '../data/business';
+import { IMAGES } from '../assets/images';
 import { ImagePlaceholder } from '../components/ImagePlaceholder';
 import { Lightbox } from '../components/Lightbox';
 import { SEO } from '../components/SEO';
@@ -26,7 +27,7 @@ export const GalleryPage: React.FC = () => {
       category: 'Celebration',
       tag: 'Single Tier',
       aspect: 'portrait',
-      suggestedFile: '/images/cakes/gallery-celebration-1.jpg',
+      suggestedFile: IMAGES.galleryCelebration1,
       description: 'Single tier birthday cake with golden brushed trim, delicate piping, and soft ivory buttercream.',
     },
     {
@@ -35,7 +36,7 @@ export const GalleryPage: React.FC = () => {
       category: 'Wedding',
       tag: '3-Tier Arch',
       aspect: 'portrait',
-      suggestedFile: '/images/cakes/gallery-wedding-1.jpg',
+      suggestedFile: IMAGES.galleryWedding1,
       description: 'Multi-tier architectural centerpiece for holy matrimony and reception celebrations across Lusaka.',
     },
     {
@@ -44,7 +45,7 @@ export const GalleryPage: React.FC = () => {
       category: 'Signature Flavour',
       tag: 'Crumb Detail',
       aspect: 'square',
-      suggestedFile: '/images/cakes/gallery-redvelvet-1.jpg',
+      suggestedFile: IMAGES.galleryRedvelvet1,
       description: 'Deep crimson cocoa sponge layered with velvety frosting and delicate crumb garnishing.',
     },
     {
@@ -53,7 +54,7 @@ export const GalleryPage: React.FC = () => {
       category: 'Custom Artistry',
       tag: 'Piping Detail',
       aspect: 'square',
-      suggestedFile: '/images/cakes/gallery-floral-1.jpg',
+      suggestedFile: IMAGES.galleryFloral1,
       description: 'Bespoke hand-piped buttercream botanicals and floral wreaths crafted with patience.',
     },
     {
@@ -62,7 +63,7 @@ export const GalleryPage: React.FC = () => {
       category: 'Signature Flavour',
       tag: 'Pure Cocoa',
       aspect: 'landscape',
-      suggestedFile: '/images/cakes/gallery-chocolate-1.jpg',
+      suggestedFile: IMAGES.galleryChocolate1,
       description: 'Rich dark cocoa sponge layered with glossy chocolate glaze and smooth cocoa buttercream.',
     },
     {
@@ -71,7 +72,7 @@ export const GalleryPage: React.FC = () => {
       category: 'Celebration',
       tag: 'Pastel Finish',
       aspect: 'portrait',
-      suggestedFile: '/images/cakes/gallery-strawberry-1.jpg',
+      suggestedFile: IMAGES.galleryStrawberry1,
       description: 'Delicate strawberry infused sponge with blush buttercream swirls and natural berry accents.',
     },
     {
@@ -80,7 +81,7 @@ export const GalleryPage: React.FC = () => {
       category: 'Wedding',
       tag: '2-Tier Minimal',
       aspect: 'square',
-      suggestedFile: '/images/cakes/gallery-minimal-tier.jpg',
+      suggestedFile: IMAGES.galleryMinimalTier,
       description: 'Clean architectural two-tier design with subtle palette lines for modern ceremonies.',
     },
     {
@@ -89,7 +90,7 @@ export const GalleryPage: React.FC = () => {
       category: 'Custom Artistry',
       tag: 'Milestone Theme',
       aspect: 'landscape',
-      suggestedFile: '/images/cakes/gallery-custom-milestone.jpg',
+      suggestedFile: IMAGES.galleryCustomMilestone,
       description: 'Tailored personalized cake designed for graduations, corporate gatherings, and anniversaries.',
     },
     {
@@ -98,7 +99,7 @@ export const GalleryPage: React.FC = () => {
       category: 'Signature Flavour',
       tag: 'Golden Sponge',
       aspect: 'square',
-      suggestedFile: '/images/cakes/gallery-vanilla-crumb.jpg',
+      suggestedFile: IMAGES.galleryVanillaCrumb,
       description: 'Moist golden crumb textured with pure Madagascar bourbon vanilla bean specks and whipped frosting.',
     },
     {
@@ -107,7 +108,7 @@ export const GalleryPage: React.FC = () => {
       category: 'Celebration',
       tag: 'Bento Style',
       aspect: 'portrait',
-      suggestedFile: '/images/cakes/gallery-bento-vintage.jpg',
+      suggestedFile: IMAGES.galleryBentoVintage,
       description: 'Delicate mini bento occasion cake with Victorian shell piping borders and antique pastel accents.',
     },
     {
@@ -116,7 +117,7 @@ export const GalleryPage: React.FC = () => {
       category: 'Wedding',
       tag: '4-Tier Matrimony',
       aspect: 'portrait',
-      suggestedFile: '/images/cakes/gallery-grand-cascade.jpg',
+      suggestedFile: IMAGES.galleryGrandCascade,
       description: 'Opulent matrimonial confection with cascading handcrafted sugar blossoms and edible gold foil.',
     },
     {
@@ -125,7 +126,7 @@ export const GalleryPage: React.FC = () => {
       category: 'Celebration',
       tag: 'Rustic Botanical',
       aspect: 'square',
-      suggestedFile: '/images/cakes/gallery-rustic-berry.jpg',
+      suggestedFile: IMAGES.galleryRusticBerry,
       description: 'Delicate scraped vanilla buttercream tier crowned with fresh blackberries, sliced figs, and organic honey.',
     },
     {
@@ -134,7 +135,7 @@ export const GalleryPage: React.FC = () => {
       category: 'Custom Artistry',
       tag: '24k Gold Marble',
       aspect: 'landscape',
-      suggestedFile: '/images/cakes/gallery-milestone-gold.jpg',
+      suggestedFile: IMAGES.galleryMilestoneGold,
       description: 'Striking dark espresso and warm ivory marble finish with hand-painted gold leaf for milestone achievements.',
     },
     {
@@ -143,7 +144,7 @@ export const GalleryPage: React.FC = () => {
       category: 'Custom Artistry',
       tag: 'Palette Knife',
       aspect: 'square',
-      suggestedFile: '/images/cakes/gallery-palette-floral.jpg',
+      suggestedFile: IMAGES.galleryPaletteFloral,
       description: 'Artisan dimensional buttercream oil-painting strokes in dusty rose, champagne, and antique gold.',
     },
   ];

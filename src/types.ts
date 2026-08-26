@@ -13,6 +13,8 @@ export interface CakeFlavour {
   notes: string;
   accentColor: string;
   highlight?: string;
+  suggestedFile?: string;
+  image?: string;
 }
 
 export interface CakeCategory {

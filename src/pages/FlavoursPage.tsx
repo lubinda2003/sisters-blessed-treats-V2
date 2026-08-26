@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Sparkles, MessageCircle, ArrowRight, Check } from 'lucide-react';
 import { FLAVOURS, getWhatsAppInquiryUrl } from '../data/business';
+import { IMAGES } from '../assets/images';
 import { ImagePlaceholder } from '../components/ImagePlaceholder';
 import { SEO } from '../components/SEO';
 
@@ -14,7 +15,7 @@ export const FlavoursPage: React.FC = () => {
       notes: 'An aromatic, delicate golden crumb infused with pure vanilla extract. Balanced with velvety whipped buttercream that enhances without overpowering.',
       accentColor: '#D9B982',
       pairing: 'Pairs beautifully with fresh floral decoration and all occasion tiers.',
-      suggestedFile: '/images/flavours/flavour-vanilla.jpg',
+      suggestedFile: IMAGES.flavourVanilla,
     },
     {
       id: 'strawberry',
@@ -23,7 +24,7 @@ export const FlavoursPage: React.FC = () => {
       notes: 'Bright berry notes, balanced natural sweetness, and a soft, fragrant sponge texture. Handcrafted with authentic fruit reduction.',
       accentColor: '#C47474',
       pairing: 'Popular for baby showers, feminine birthdays, and springtime celebrations.',
-      suggestedFile: '/images/flavours/flavour-strawberry.jpg',
+      suggestedFile: IMAGES.flavourStrawberry,
     },
     {
       id: 'chocolate',
@@ -32,7 +33,7 @@ export const FlavoursPage: React.FC = () => {
       notes: 'Rich cocoa sponge baked with deep moisture and layered with luscious chocolate fudge buttercream. Pure indulgence for chocolate connoisseurs.',
       accentColor: '#5C3A21',
       pairing: 'A standout crowd favorite for milestone parties and celebration centerpieces.',
-      suggestedFile: '/images/flavours/flavour-chocolate.jpg',
+      suggestedFile: IMAGES.flavourChocolate,
     },
     {
       id: 'red-velvet',
@@ -41,7 +42,7 @@ export const FlavoursPage: React.FC = () => {
       notes: 'Classic crimson sponge with a nuanced whisper of cocoa and buttermilk tang, married seamlessly with silky vanilla frosting.',
       accentColor: '#8C2B32',
       pairing: 'The quintessential centerpiece for romantic unions, weddings, and anniversaries.',
-      suggestedFile: '/images/flavours/flavour-redvelvet.jpg',
+      suggestedFile: IMAGES.flavourRedvelvet,
     },
   ];
 
