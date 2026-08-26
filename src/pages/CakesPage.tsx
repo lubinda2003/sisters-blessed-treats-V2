@@ -17,13 +17,14 @@ export const CakesPage: React.FC = () => {
         description="Explore custom celebration cakes, multi-tier wedding centerpieces, sizes, and pricing handcrafted by Sisters Blessed Treats in PHI, Lusaka."
         canonicalPath="/cakes"
       />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 space-y-14 sm:space-y-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 space-y-12 sm:space-y-16 lg:space-y-20">
         
         {/* Page Header */}
         <div className="max-w-3xl space-y-3">
-          <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.25em] text-[#B4975A] font-semibold block font-sans">
-            Artisan Cake Offerings
-          </span>
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#F5F0E6] border border-[#B4975A]/30 text-[#B4975A] text-[9px] sm:text-[10px] uppercase tracking-[0.2em] font-medium rounded-[2px]">
+            <Sparkles className="w-2.5 sm:w-3 h-2.5 sm:h-3 text-[#B4975A]" />
+            <span>Artisan Cake Offerings</span>
+          </div>
           <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal text-[#2D241E] leading-tight tracking-tight">
             Handcrafted for life's meaningful celebrations.
           </h1>
@@ -32,16 +33,16 @@ export const CakesPage: React.FC = () => {
           </p>
         </div>
 
-        {/* 3 Main Offerings: Editorial 3-Column Showcase */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10 max-w-md lg:max-w-none mx-auto">
+        {/* 3 Main Offerings: Unified Artisan Cards */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 max-w-md lg:max-w-none mx-auto">
           
           {/* Offering 1: Celebration Cakes */}
           <div
             id="cakes-celebration"
-            className="flex flex-col justify-between space-y-5 bg-[#F5F0E6]/50 lg:bg-transparent p-4 lg:p-0 border border-[#2D241E]/10 lg:border-0"
+            className="bg-[#F5F0E6] border border-[#B4975A]/25 rounded-[2px] p-4 sm:p-5 hover:border-[#B4975A] hover:shadow-xs transition-all duration-200 flex flex-col justify-between group space-y-5"
           >
             <div className="space-y-3.5">
-              <div className="overflow-hidden">
+              <div className="overflow-hidden rounded-[2px]">
                 <ImagePlaceholder
                   id="cakes-celebration-image"
                   label={celebrationCake.title}
@@ -57,7 +58,7 @@ export const CakesPage: React.FC = () => {
                   <span className="text-[9px] uppercase tracking-[0.2em] text-[#B4975A] font-semibold block font-sans">
                     {celebrationCake.subtitle}
                   </span>
-                  <h2 className="font-serif text-xl sm:text-2xl font-normal text-[#2D241E] mt-0.5">
+                  <h2 className="font-serif text-xl sm:text-2xl font-normal text-[#2D241E] mt-0.5 group-hover:text-[#B4975A] transition-colors">
                     {celebrationCake.title}
                   </h2>
                 </div>
@@ -95,12 +96,12 @@ export const CakesPage: React.FC = () => {
               </div>
             </div>
 
-            <div className="pt-2">
+            <div className="pt-3 border-t border-[#2D241E]/10">
               <a
                 href={getWhatsAppInquiryUrl({ category: 'Celebration Cake' })}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-[#2D241E] text-[#FDFBF7] text-[10px] sm:text-[11px] uppercase tracking-[0.16em] font-medium rounded-[2px] hover:bg-[#B4975A] transition-colors duration-200"
+                className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 sm:py-3 bg-[#2D241E] text-[#FDFBF7] text-[10px] sm:text-[11px] uppercase tracking-[0.16em] font-medium rounded-[2px] hover:bg-[#B4975A] transition-colors duration-200 shadow-xs cursor-pointer"
               >
                 <MessageCircle className="w-3.5 h-3.5 text-[#B4975A]" />
                 <span>Inquire on WhatsApp →</span>
@@ -111,10 +112,10 @@ export const CakesPage: React.FC = () => {
           {/* Offering 2: Wedding Cakes */}
           <div
             id="cakes-wedding"
-            className="flex flex-col justify-between space-y-5 bg-[#F5F0E6]/50 lg:bg-transparent p-4 lg:p-0 border border-[#2D241E]/10 lg:border-0"
+            className="bg-[#F5F0E6] border border-[#B4975A]/25 rounded-[2px] p-4 sm:p-5 hover:border-[#B4975A] hover:shadow-xs transition-all duration-200 flex flex-col justify-between group space-y-5"
           >
             <div className="space-y-3.5">
-              <div className="overflow-hidden">
+              <div className="overflow-hidden rounded-[2px]">
                 <ImagePlaceholder
                   id="cakes-wedding-image"
                   label={weddingCake.title}
@@ -130,7 +131,7 @@ export const CakesPage: React.FC = () => {
                   <span className="text-[9px] uppercase tracking-[0.2em] text-[#B4975A] font-semibold block font-sans">
                     {weddingCake.subtitle}
                   </span>
-                  <h2 className="font-serif text-xl sm:text-2xl font-normal text-[#2D241E] mt-0.5">
+                  <h2 className="font-serif text-xl sm:text-2xl font-normal text-[#2D241E] mt-0.5 group-hover:text-[#B4975A] transition-colors">
                     {weddingCake.title}
                   </h2>
                 </div>
@@ -168,12 +169,12 @@ export const CakesPage: React.FC = () => {
               </div>
             </div>
 
-            <div className="pt-2">
+            <div className="pt-3 border-t border-[#2D241E]/10">
               <a
                 href={getWhatsAppInquiryUrl({ category: 'Wedding Cake' })}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-[#2D241E] text-[#FDFBF7] text-[10px] sm:text-[11px] uppercase tracking-[0.16em] font-medium rounded-[2px] hover:bg-[#B4975A] transition-colors duration-200"
+                className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 sm:py-3 bg-[#2D241E] text-[#FDFBF7] text-[10px] sm:text-[11px] uppercase tracking-[0.16em] font-medium rounded-[2px] hover:bg-[#B4975A] transition-colors duration-200 shadow-xs cursor-pointer"
               >
                 <MessageCircle className="w-3.5 h-3.5 text-[#B4975A]" />
                 <span>Consult on Wedding Cake →</span>
@@ -184,10 +185,10 @@ export const CakesPage: React.FC = () => {
           {/* Offering 3: Custom & Specialty Cakes */}
           <div
             id="cakes-custom"
-            className="flex flex-col justify-between space-y-5 bg-[#F5F0E6]/50 lg:bg-transparent p-4 lg:p-0 border border-[#2D241E]/10 lg:border-0"
+            className="bg-[#F5F0E6] border border-[#B4975A]/25 rounded-[2px] p-4 sm:p-5 hover:border-[#B4975A] hover:shadow-xs transition-all duration-200 flex flex-col justify-between group space-y-5"
           >
             <div className="space-y-3.5">
-              <div className="overflow-hidden">
+              <div className="overflow-hidden rounded-[2px]">
                 <ImagePlaceholder
                   id="cakes-custom-image"
                   label={customCake.title}
@@ -203,7 +204,7 @@ export const CakesPage: React.FC = () => {
                   <span className="text-[9px] uppercase tracking-[0.2em] text-[#B4975A] font-semibold block font-sans">
                     {customCake.subtitle}
                   </span>
-                  <h2 className="font-serif text-xl sm:text-2xl font-normal text-[#2D241E] mt-0.5">
+                  <h2 className="font-serif text-xl sm:text-2xl font-normal text-[#2D241E] mt-0.5 group-hover:text-[#B4975A] transition-colors">
                     {customCake.title}
                   </h2>
                 </div>
@@ -241,12 +242,12 @@ export const CakesPage: React.FC = () => {
               </div>
             </div>
 
-            <div className="pt-2">
+            <div className="pt-3 border-t border-[#2D241E]/10">
               <a
                 href={getWhatsAppInquiryUrl({ category: 'Custom Cake' })}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-[#2D241E] text-[#FDFBF7] text-[10px] sm:text-[11px] uppercase tracking-[0.16em] font-medium rounded-[2px] hover:bg-[#B4975A] transition-colors duration-200"
+                className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 sm:py-3 bg-[#2D241E] text-[#FDFBF7] text-[10px] sm:text-[11px] uppercase tracking-[0.16em] font-medium rounded-[2px] hover:bg-[#B4975A] transition-colors duration-200 shadow-xs cursor-pointer"
               >
                 <MessageCircle className="w-3.5 h-3.5 text-[#B4975A]" />
                 <span>Request Custom Quote →</span>
@@ -256,11 +257,12 @@ export const CakesPage: React.FC = () => {
         </div>
 
         {/* Tier Sizing Guide (Editorial Clean Strip) */}
-        <div className="py-10 sm:py-14 px-6 sm:px-10 bg-[#F5F0E6] border-y border-[#2D241E]/10 space-y-8">
+        <div className="py-10 sm:py-12 px-6 sm:px-10 bg-[#F5F0E6] border border-[#B4975A]/25 rounded-[2px] space-y-8">
           <div className="max-w-2xl space-y-1">
-            <span className="text-[10px] uppercase tracking-[0.25em] text-[#B4975A] font-semibold block font-sans">
-              Portion Guide
-            </span>
+            <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 bg-[#FDFBF7] border border-[#B4975A]/30 text-[#B4975A] text-[9px] sm:text-[10px] uppercase tracking-[0.2em] font-medium rounded-[2px] mb-1">
+              <Sparkles className="w-2.5 sm:w-3 h-2.5 sm:h-3 text-[#B4975A]" />
+              <span>Portion Guide</span>
+            </div>
             <h2 className="font-serif text-2xl sm:text-3xl font-normal text-[#2D241E]">
               Selecting the Right Tier Size
             </h2>
@@ -269,11 +271,11 @@ export const CakesPage: React.FC = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
             {SIZES.map((size) => (
               <div
                 key={size.id}
-                className="border-t border-[#2D241E]/15 pt-4 space-y-2"
+                className="bg-[#FDFBF7] border border-[#B4975A]/20 rounded-[2px] p-4 space-y-2"
               >
                 <span className="text-[10px] uppercase tracking-wider text-[#B4975A] font-semibold block font-sans">
                   {size.diameter}
@@ -287,7 +289,7 @@ export const CakesPage: React.FC = () => {
                 <p className="text-xs text-[#2D241E]/75 leading-relaxed font-sans">
                   {size.description}
                 </p>
-                <div className="pt-2">
+                <div className="pt-2 border-t border-[#2D241E]/10">
                   <span className="text-[11px] text-[#2D241E]/60 italic font-serif">
                     Best for: {size.bestFor}
                   </span>

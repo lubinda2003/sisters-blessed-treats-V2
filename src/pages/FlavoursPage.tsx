@@ -53,13 +53,14 @@ export const FlavoursPage: React.FC = () => {
         description="Discover our 4 scratch-baked flavours: pure Vanilla, natural Strawberry, rich Chocolate, and signature Red Velvet."
         canonicalPath="/flavours"
       />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 space-y-14 sm:space-y-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 space-y-12 sm:space-y-16 lg:space-y-20">
         
         {/* Page Header */}
         <div className="max-w-3xl space-y-3">
-          <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.25em] text-[#B4975A] font-semibold block font-sans">
-            Artisan Bakery Recipes
-          </span>
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#F5F0E6] border border-[#B4975A]/30 text-[#B4975A] text-[9px] sm:text-[10px] uppercase tracking-[0.2em] font-medium rounded-[2px]">
+            <Sparkles className="w-2.5 sm:w-3 h-2.5 sm:h-3 text-[#B4975A]" />
+            <span>Artisan Bakery Recipes</span>
+          </div>
           <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal text-[#2D241E] leading-tight tracking-tight">
             Four Signature Flavours
           </h1>
@@ -69,15 +70,15 @@ export const FlavoursPage: React.FC = () => {
         </div>
 
         {/* 4 Flavours Editorial Showcase Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
           {flavourDetails.map((flavour) => (
             <div
               key={flavour.id}
               id={`flavour-${flavour.id}`}
-              className="border-t border-[#2D241E]/20 pt-6 flex flex-col justify-between space-y-6"
+              className="bg-[#F5F0E6] border border-[#B4975A]/25 rounded-[2px] p-4 sm:p-5 hover:border-[#B4975A] hover:shadow-xs transition-all duration-200 flex flex-col justify-between group space-y-5"
             >
-              <div className="space-y-4">
-                <div className="relative">
+              <div className="space-y-3.5">
+                <div className="relative overflow-hidden rounded-[2px]">
                   <ImagePlaceholder
                     id={`flavour-image-${flavour.id}`}
                     label={`${flavour.name} Recipe`}
@@ -93,7 +94,7 @@ export const FlavoursPage: React.FC = () => {
                   />
                 </div>
 
-                <div className="space-y-2">
+                <div className="space-y-2 p-1">
                   <div className="flex items-center justify-between">
                     <span className="text-[9px] uppercase tracking-[0.2em] text-[#B4975A] font-semibold block font-sans">
                       Signature Recipe
@@ -103,7 +104,7 @@ export const FlavoursPage: React.FC = () => {
                     </span>
                   </div>
 
-                  <h2 className="font-serif text-2xl font-normal text-[#2D241E]">
+                  <h2 className="font-serif text-2xl font-normal text-[#2D241E] group-hover:text-[#B4975A] transition-colors">
                     {flavour.name}
                   </h2>
                   <p className="text-xs font-serif italic text-[#B4975A]">
@@ -122,12 +123,12 @@ export const FlavoursPage: React.FC = () => {
                 </div>
               </div>
 
-              <div>
+              <div className="pt-3 border-t border-[#2D241E]/10">
                 <a
                   href={getWhatsAppInquiryUrl({ flavour: flavour.name })}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 bg-[#2D241E] text-[#FDFBF7] text-[10px] sm:text-[11px] uppercase tracking-[0.16em] font-medium rounded-[2px] hover:bg-[#B4975A] transition-colors duration-200"
+                  className="w-full inline-flex items-center justify-center gap-2 px-5 py-2.5 sm:py-3 bg-[#2D241E] text-[#FDFBF7] text-[10px] sm:text-[11px] uppercase tracking-[0.16em] font-medium rounded-[2px] hover:bg-[#B4975A] transition-colors duration-200 shadow-xs cursor-pointer"
                 >
                   <MessageCircle className="w-3.5 h-3.5 text-[#B4975A]" />
                   <span>Order {flavour.name} on WhatsApp →</span>
@@ -138,7 +139,7 @@ export const FlavoursPage: React.FC = () => {
         </div>
 
         {/* Flavour Combinations & Tiering Info (Editorial Banner) */}
-        <div className="py-10 sm:py-12 px-6 sm:px-10 bg-[#F5F0E6] border border-[#2D241E]/10 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="py-8 sm:py-10 px-6 sm:px-10 bg-[#F5F0E6] border border-[#B4975A]/25 rounded-[2px] flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="max-w-2xl space-y-1 text-center md:text-left">
             <span className="text-[10px] uppercase tracking-[0.25em] text-[#B4975A] font-semibold block font-sans">
               Multi-Flavour Tiers
@@ -151,16 +152,16 @@ export const FlavoursPage: React.FC = () => {
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-5 sm:gap-6 shrink-0">
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 shrink-0">
             <Link
               to="/cakes"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-[#2D241E] text-[#FDFBF7] text-[10px] sm:text-[11px] uppercase tracking-[0.16em] font-medium rounded-[2px] hover:bg-[#B4975A] transition-colors duration-200"
+              className="inline-flex items-center gap-2 px-5 py-2.5 sm:px-6 sm:py-3 bg-[#2D241E] text-[#FDFBF7] text-[10px] sm:text-[11px] uppercase tracking-[0.16em] font-medium rounded-[2px] hover:bg-[#B4975A] transition-colors duration-200 shadow-xs"
             >
               <span>View cake tiers →</span>
             </Link>
             <Link
               to="/order"
-              className="group inline-flex items-center gap-2 text-[10px] sm:text-[11px] uppercase tracking-[0.16em] text-[#2D241E] hover:text-[#B4975A] font-medium border-b border-[#2D241E]/40 hover:border-[#B4975A] pb-1 transition-all duration-200"
+              className="group inline-flex items-center gap-2 text-[10px] sm:text-[11px] uppercase tracking-[0.16em] text-[#2D241E] hover:text-[#B4975A] font-medium border-b border-[#2D241E]/30 hover:border-[#B4975A] pb-0.5 transition-all duration-200"
             >
               <span>How to order</span>
               <ArrowRight className="w-3.5 h-3.5 text-[#B4975A] transition-transform duration-200 group-hover:translate-x-1" />

@@ -49,13 +49,14 @@ export const OrderPage: React.FC = () => {
         description="Learn how to order custom cakes from Sisters Blessed Treats: 2+ days advance notice, 50% commitment deposit, and Lusaka-wide Yango delivery."
         canonicalPath="/order"
       />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 space-y-14 sm:space-y-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 space-y-12 sm:space-y-16 lg:space-y-20">
         
         {/* Page Header */}
         <div className="max-w-3xl space-y-3">
-          <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.25em] text-[#B4975A] font-semibold block font-sans">
-            Ordering Guidelines
-          </span>
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#F5F0E6] border border-[#B4975A]/30 text-[#B4975A] text-[9px] sm:text-[10px] uppercase tracking-[0.2em] font-medium rounded-[2px]">
+            <Sparkles className="w-2.5 sm:w-3 h-2.5 sm:h-3 text-[#B4975A]" />
+            <span>Ordering Guidelines</span>
+          </div>
           <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal text-[#2D241E] leading-tight tracking-tight">
             How to Place Your Order
           </h1>
@@ -65,18 +66,18 @@ export const OrderPage: React.FC = () => {
         </div>
 
         {/* 4 Steps Sequence (Editorial Clean Layout) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {steps.map((step) => (
             <div
               key={step.number}
               id={`order-step-${step.number}`}
-              className="border-t border-[#2D241E]/20 pt-5 space-y-2.5 flex flex-col justify-between"
+              className="bg-[#F5F0E6] border border-[#B4975A]/25 rounded-[2px] p-4 sm:p-5 hover:border-[#B4975A] hover:shadow-xs transition-all duration-200 flex flex-col justify-between space-y-3 group"
             >
               <div className="space-y-2">
                 <span className="text-[10px] uppercase tracking-[0.2em] text-[#B4975A] font-semibold block font-sans">
                   Step {step.number}
                 </span>
-                <h3 className="font-serif text-xl font-normal text-[#2D241E]">
+                <h3 className="font-serif text-xl font-normal text-[#2D241E] group-hover:text-[#B4975A] transition-colors">
                   {step.title}
                 </h3>
                 <p className="text-xs sm:text-sm text-[#2D241E]/80 leading-relaxed font-sans">
@@ -88,20 +89,21 @@ export const OrderPage: React.FC = () => {
         </div>
 
         {/* Order Information & Logistics Strip (Editorial Section) */}
-        <div className="py-10 sm:py-14 px-6 sm:px-10 bg-[#F5F0E6] border-y border-[#2D241E]/10 space-y-8">
+        <div className="py-8 sm:py-10 px-6 sm:px-10 bg-[#F5F0E6] border border-[#B4975A]/25 rounded-[2px] space-y-8">
           <div className="max-w-2xl space-y-1">
-            <span className="text-[10px] uppercase tracking-[0.25em] text-[#B4975A] font-semibold block font-sans">
-              Bakery Policies
-            </span>
+            <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 bg-[#FDFBF7] border border-[#B4975A]/30 text-[#B4975A] text-[9px] sm:text-[10px] uppercase tracking-[0.2em] font-medium rounded-[2px] mb-1">
+              <Sparkles className="w-2.5 sm:w-3 h-2.5 sm:h-3 text-[#B4975A]" />
+              <span>Bakery Policies</span>
+            </div>
             <h2 className="font-serif text-2xl sm:text-3xl font-normal text-[#2D241E]">
               Terms, Timeline & Delivery
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
             
             {/* Order Information */}
-            <div className="space-y-2 border-t border-[#2D241E]/15 pt-4">
+            <div className="space-y-2 bg-[#FDFBF7] border border-[#B4975A]/20 rounded-[2px] p-4 sm:p-5">
               <span className="text-[10px] uppercase tracking-[0.2em] text-[#B4975A] font-semibold font-sans block">
                 01. Advance Notice
               </span>
@@ -125,7 +127,7 @@ export const OrderPage: React.FC = () => {
             </div>
 
             {/* Delivery & Collection */}
-            <div className="space-y-2 border-t border-[#2D241E]/15 pt-4">
+            <div className="space-y-2 bg-[#FDFBF7] border border-[#B4975A]/20 rounded-[2px] p-4 sm:p-5">
               <span className="text-[10px] uppercase tracking-[0.2em] text-[#B4975A] font-semibold font-sans block">
                 02. Fulfillment
               </span>
@@ -149,7 +151,7 @@ export const OrderPage: React.FC = () => {
             </div>
 
             {/* Payment Details */}
-            <div className="space-y-2 border-t border-[#2D241E]/15 pt-4">
+            <div className="space-y-2 bg-[#FDFBF7] border border-[#B4975A]/20 rounded-[2px] p-4 sm:p-5">
               <span className="text-[10px] uppercase tracking-[0.2em] text-[#B4975A] font-semibold font-sans block">
                 03. Payment Terms
               </span>
@@ -176,7 +178,7 @@ export const OrderPage: React.FC = () => {
         </div>
 
         {/* Quick-Start WhatsApp Inquiry Section */}
-        <div className="border border-[#2D241E]/10 p-6 sm:p-10 space-y-6">
+        <div className="bg-[#F5F0E6] border border-[#B4975A]/25 rounded-[2px] p-6 sm:p-10 space-y-6">
           <div className="max-w-2xl space-y-1">
             <span className="text-[10px] uppercase tracking-[0.25em] text-[#B4975A] font-semibold block font-sans">
               Start Your Order
@@ -263,7 +265,7 @@ export const OrderPage: React.FC = () => {
               type="button"
               id="order-submit-whatsapp"
               onClick={handleCustomOrderClick}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#2D241E] text-[#FDFBF7] text-[10px] sm:text-[11px] uppercase tracking-[0.16em] font-medium rounded-[2px] hover:bg-[#B4975A] transition-colors duration-200 cursor-pointer"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#2D241E] text-[#FDFBF7] text-[10px] sm:text-[11px] uppercase tracking-[0.16em] font-medium rounded-[2px] hover:bg-[#B4975A] transition-colors duration-200 cursor-pointer shadow-xs"
             >
               <MessageCircle className="w-3.5 h-3.5 text-[#B4975A]" />
               <span>Order on WhatsApp →</span>
@@ -272,22 +274,22 @@ export const OrderPage: React.FC = () => {
         </div>
 
         {/* Direct Contact Reference Strip (Editorial Minimalist) */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-4">
-          <div className="border-t border-[#2D241E]/20 pt-4 space-y-1">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-2">
+          <div className="bg-[#F5F0E6] border border-[#B4975A]/25 rounded-[2px] p-4 sm:p-5 space-y-1">
             <span className="text-[9px] uppercase tracking-[0.2em] text-[#B4975A] font-semibold block font-sans">Phone & WhatsApp</span>
             <a href={getWhatsAppInquiryUrl()} target="_blank" rel="noopener noreferrer" className="font-serif text-base text-[#2D241E] hover:text-[#B4975A] transition-colors block">
               {BUSINESS.phoneDisplay}
             </a>
           </div>
 
-          <div className="border-t border-[#2D241E]/20 pt-4 space-y-1">
+          <div className="bg-[#F5F0E6] border border-[#B4975A]/25 rounded-[2px] p-4 sm:p-5 space-y-1">
             <span className="text-[9px] uppercase tracking-[0.2em] text-[#B4975A] font-semibold block font-sans">Email Inquiries</span>
             <a href={`mailto:${BUSINESS.email}`} className="font-serif text-base text-[#2D241E] hover:text-[#B4975A] transition-colors block break-all">
               {BUSINESS.email}
             </a>
           </div>
 
-          <div className="border-t border-[#2D241E]/20 pt-4 space-y-1">
+          <div className="bg-[#F5F0E6] border border-[#B4975A]/25 rounded-[2px] p-4 sm:p-5 space-y-1">
             <span className="text-[9px] uppercase tracking-[0.2em] text-[#B4975A] font-semibold block font-sans">Bakery Kitchen</span>
             <p className="font-serif text-base text-[#2D241E]">
               {BUSINESS.address}, Lusaka
@@ -299,13 +301,13 @@ export const OrderPage: React.FC = () => {
         <div className="border-t border-[#2D241E]/15 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <Link
             to="/cakes"
-            className="group inline-flex items-center gap-2 text-[10px] sm:text-[11px] uppercase tracking-[0.16em] text-[#2D241E] hover:text-[#B4975A] font-medium border-b border-[#2D241E]/40 hover:border-[#B4975A] pb-1 transition-all duration-200"
+            className="group inline-flex items-center gap-2 text-[10px] sm:text-[11px] uppercase tracking-[0.16em] text-[#2D241E] hover:text-[#B4975A] font-medium border-b border-[#2D241E]/30 hover:border-[#B4975A] pb-0.5 transition-all duration-200"
           >
             <span>← Review cake catalogue</span>
           </Link>
           <Link
             to="/contact"
-            className="group inline-flex items-center gap-2 text-[10px] sm:text-[11px] uppercase tracking-[0.16em] text-[#2D241E] hover:text-[#B4975A] font-medium border-b border-[#2D241E]/40 hover:border-[#B4975A] pb-1 transition-all duration-200"
+            className="group inline-flex items-center gap-2 text-[10px] sm:text-[11px] uppercase tracking-[0.16em] text-[#2D241E] hover:text-[#B4975A] font-medium border-b border-[#2D241E]/30 hover:border-[#B4975A] pb-0.5 transition-all duration-200"
           >
             <span>Kitchen location & hours →</span>
           </Link>

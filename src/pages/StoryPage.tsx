@@ -18,9 +18,10 @@ export const StoryPage: React.FC = () => {
         
         {/* Page Header */}
         <div className="max-w-3xl space-y-3">
-          <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.25em] text-[#B4975A] font-semibold block font-sans">
-            Our Story & Ministry
-          </span>
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#F5F0E6] border border-[#B4975A]/30 text-[#B4975A] text-[9px] sm:text-[10px] uppercase tracking-[0.2em] font-medium rounded-[2px]">
+            <Sparkles className="w-2.5 sm:w-3 h-2.5 sm:h-3 text-[#B4975A]" />
+            <span>Our Story & Ministry</span>
+          </div>
           <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal text-[#2D241E] leading-tight tracking-tight">
             A ministry of sweetness, baked with devotion and quiet care.
           </h1>
@@ -183,7 +184,7 @@ export const StoryPage: React.FC = () => {
         </div>
 
         {/* Editorial Navigation (Refined Story Transition) */}
-        <div className="py-8 sm:py-10 px-6 sm:px-8 bg-[#F5F0E6] border border-[#2D241E]/10 flex flex-col sm:flex-row items-center justify-between gap-6">
+        <div className="py-8 sm:py-10 px-6 sm:px-10 bg-[#F5F0E6] border border-[#B4975A]/25 rounded-[2px] flex flex-col sm:flex-row items-center justify-between gap-6">
           <div className="space-y-1 text-center sm:text-left">
             <span className="text-[10px] uppercase tracking-[0.2em] text-[#B4975A] font-semibold block font-sans">
               Discover Our Creations
@@ -195,16 +196,17 @@ export const StoryPage: React.FC = () => {
           <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 shrink-0">
             <Link
               to="/cakes"
-              className="inline-flex items-center gap-1.5 px-5 py-2.5 bg-[#2D241E] text-[#FDFBF7] text-[11px] uppercase tracking-[0.14em] font-medium rounded-xs hover:bg-[#B4975A] transition-colors duration-200"
+              className="inline-flex items-center gap-2 px-5 py-2.5 sm:px-6 sm:py-3 bg-[#2D241E] text-[#FDFBF7] text-[10px] sm:text-[11px] uppercase tracking-[0.16em] font-medium rounded-[2px] hover:bg-[#B4975A] transition-colors duration-200 shadow-xs"
             >
               <span>View Cake Tiers</span>
-              <ArrowRight className="w-3 h-3 text-[#B4975A]" />
+              <ArrowRight className="w-3.5 h-3.5 text-[#B4975A]" />
             </Link>
             <Link
               to="/flavours"
-              className="text-[11px] uppercase tracking-[0.14em] text-[#2D241E] hover:text-[#B4975A] font-medium border-b border-[#2D241E]/30 pb-0.5 transition-colors"
+              className="group inline-flex items-center gap-1.5 text-[10px] sm:text-[11px] uppercase tracking-[0.16em] text-[#2D241E] hover:text-[#B4975A] font-medium border-b border-[#2D241E]/30 hover:border-[#B4975A] pb-0.5 transition-all duration-200"
             >
               <span>Signature Flavours</span>
+              <ArrowRight className="w-3.5 h-3.5 text-[#B4975A] transition-transform duration-200 group-hover:translate-x-1" />
             </Link>
           </div>
         </div>
